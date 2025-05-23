@@ -18,9 +18,11 @@ export const Header = () => {
   const listNav = [
     { label: 'Sobre nosotros', href: '#sobre-nosotros' },
     { label: 'Adopta', href: '#adopta' },
+    { label: 'Voluntario', href: '#voluntario' },
     { label: 'Dona', href: '#dona' },
-    { label: 'Apadrina', href: '#apadrina' },
-    { label: 'Nuestros felinos', href: '#nuestros-felinos' },
+    { label: 'Equipo', href: '#equipo' },
+    { label: 'Ayuda', href: '#ayuda' },
+    // { label: 'Nuestros felinos', href: '#nuestros-felinos' },
     { label: 'Contacto', href: '#contact' },
   ];
 
@@ -61,7 +63,7 @@ export const Header = () => {
             <a
               key={index}
               href={item.href}
-              className="block py-2 px-4 hover:bg-amber-200 rounded-md"
+              className="block py-2 px-4 hover:bg-amber-200 rounded-md text-right"
               onClick={toggleNavbar}
             >
               {item.label}

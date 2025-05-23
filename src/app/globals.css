@@ -26,3 +26,12 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.highlight {
+  @apply text-amber-500 text-xl font-bold;
+}
+
+.list-volunter {
+  list-style-type: '🐱 ';
+  list-style-position: inside;
+}

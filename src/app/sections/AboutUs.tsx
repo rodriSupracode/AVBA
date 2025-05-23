@@ -3,7 +3,7 @@ import Image from 'next/image';
 export const AboutUs = () => {
   return (
     <section
-      className="flex flex-row items-center justify-end w-full h-screen bg-white"
+      className="flex flex-row items-center justify-end w-full h-screen bg-white overflow-hidden"
       id="sobre-nosotros"
     >
       <Image
