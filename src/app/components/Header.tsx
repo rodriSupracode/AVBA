@@ -2,7 +2,9 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import useOnclickOutside from 'react-cool-onclickoutside';
-import { IoMenu } from 'react-icons/io5';
+import { IoMenu, IoClose } from 'react-icons/io5';
+import { FaCat } from 'react-icons/fa';
+import { IoShareSocialOutline } from 'react-icons/io5';
 
 export const Header = () => {
   const [isNavbarOpen, setNavbarOpen] = useState(false);
@@ -16,12 +18,12 @@ export const Header = () => {
   });
 
   const listNav = [
-    { label: 'Sobre nosotros', href: '#sobre-nosotros' },
-    { label: 'Adopta', href: '#adopta' },
-    { label: 'Dona', href: '#dona' },
-    { label: 'Apadrina', href: '#apadrina' },
-    { label: 'Nuestros felinos', href: '#nuestros-felinos' },
-    { label: 'Contacto', href: '#contact' },
+    { label: 'Sobre nosotros', href: '/#sobre-nosotros' },
+    { label: 'Adopta', href: '/#adopta' },
+    { label: 'Dona', href: '/#dona' },
+    { label: 'Apadrina', href: '/#apadrina' },
+    { label: 'Nuestros felinos', href: '/nuestros-felinos', icon: <FaCat /> },
+    { label: 'Contacto', href: '/#contact', icon: <IoShareSocialOutline /> },
   ];
 
   return (
@@ -45,25 +47,26 @@ export const Header = () => {
             </h1>
           </div>
           <button
-            className="roundend text-black text-2xl bg-amber-100 p-2 rounded-md shadow-md hover:bg-amber-200 focus:outline-none"
+            className="cursor-pointer roundend text-black text-2xl bg-amber-100 p-2 rounded-md shadow-md hover:bg-amber-200 focus:outline-none"
             onClick={toggleNavbar}
           >
-            <IoMenu />
+            {isNavbarOpen ? <IoClose /> : <IoMenu />}
           </button>
         </div>
       </header>
       {isNavbarOpen && (
         <div
           ref={ref}
-          className="w-full md:max-w-48 md:float-right mt-2 bg-amber-100 rounded-lg shadow-md p-4 text-black"
+          className="w-full md:max-w-52 md:float-right mt-2 bg-amber-100 rounded-lg shadow-md p-4 text-black"
         >
           {listNav.map((item, index) => (
             <a
               key={index}
               href={item.href}
-              className="block py-2 px-4 hover:bg-amber-200 rounded-md"
+              className="py-2 px-4 hover:bg-amber-200 rounded-md flex items-center justify-end"
               onClick={toggleNavbar}
             >
+              {item.icon && <span className="mr-2">{item.icon}</span>}
               {item.label}
             </a>
           ))}
