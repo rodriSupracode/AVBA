@@ -7,7 +7,7 @@ import { MoonLoader } from 'react-spinners';
 
 export const CatCard = ({ name, image, description, adopted, id }: Cats) => {
   const [fallbackImage, setFallbackImage] = useState<string | undefined>(image);
-  const [isLoadingRedirect, setIsLoadingRedirect] = useState(true);
+  const [isLoadingRedirect, setIsLoadingRedirect] = useState(false);
 
   const router = useRouter();
   return (
