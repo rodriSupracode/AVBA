@@ -11,15 +11,15 @@ export const HowToAdopt = () => {
 
   return (
     <section id="adopta">
-      <div className="min-h-96 bg-amber-100 p-8">
+      <div className="min-h-96 bg-amber-100 p-4 md:p-8">
         <div className="bg-white shadow-md rounded-lg p-8 z-40">
           <div className="flex md:flex-row flex-col items-center justify-center gap-4">
-            <h1 className="text-2xl">{title}</h1>
+            <h1 className="text-2xl text-center">{title}</h1>
             <h2 className="text-2xl text-amber-400 font-bold">{title2}</h2>
           </div>
           <div className="flex lg:flex-row flex-col mt-4 gap-4 items-center">
             <div className="lg:flex-1/2 h-80 md:h-[650px] w-full bg-[url('/cat-main.jpg')] bg-cover bg-center bg-no-repeat rounded-lg shadow-2xl"></div>
-            <div className="lg:flex-1/2 text-justify align-middle font-light text-lg p-4 flex flex-col gap-4">
+            <div className="lg:flex-1/2 text-justify align-middle font-light text-lg p-1 md:p-4 flex flex-col gap-4">
               <p dangerouslySetInnerHTML={{ __html: text1 }} />
               <p dangerouslySetInnerHTML={{ __html: text2 }} />
               <p dangerouslySetInnerHTML={{ __html: text3 }} />

@@ -1,13 +1,13 @@
 export const Team = () => {
   return (
-    <section id="equipo" className="bg-white p-8">
+    <section id="equipo" className="bg-white md:p-8 p-4">
       <h2 className="text-amber-500 text-center font-bold text-2xl mb-8">
         ¡Un equipo maravilloso!
       </h2>
       <div className="bg-[url('/volunteers.jpg')] bg-cover bg-center bg-no-repeat w-full min-h-96 rounded-2xl ">
         <a
           href="#contact"
-          className="backdrop-blur-xs backdrop-brightness-50 w-full h-full flex items-center rounded-2xl justify-center text-center text-white font-bold text-lg p-4 flex-col"
+          className="backdrop-blur-xs backdrop-brightness-50 w-full h-full min-h-96 flex items-center rounded-2xl justify-center text-center text-white font-bold text-lg p-4 flex-col"
         >
           <p>
             Somos un grupo pequeño de personas concienciadas de todas edades que
