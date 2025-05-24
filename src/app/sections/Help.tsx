@@ -1,7 +1,7 @@
 export const Help = () => {
   return (
     <section id="ayuda">
-      <div className="bg-amber-100 p-8">
+      <div className="bg-amber-100 md:p-8 p-4">
         <h2 className="text-amber-500 text-center font-bold text-2xl">
           ¿Cómo puedo ayudaros?
         </h2>
@@ -13,20 +13,20 @@ export const Help = () => {
         </p>
         <div className="flex gap-4 mt-4 mb-4">
           <a href="#dona" className="w-full">
-            <button className="bg-amber-200 rounded-lg p-5 w-full shadow-2xl cursor-pointer  hover:bg-amber-300">
+            <button className="bg-amber-200 h-full rounded-lg p-3 w-full shadow-xl cursor-pointer font-light text-xl hover:shadow-2xl">
               Dona
             </button>
           </a>
           <a href="#voluntario" className="w-full">
-            <button className="bg-amber-200 rounded-lg p-5 w-full shadow-2xl cursor-pointer  hover:bg-amber-300">
+            <button className="bg-amber-200 h-full rounded-lg p-3 w-full shadow-xl cursor-pointer font-light text-xl hover:shadow-2xl">
               Hazte Voluntario
             </button>
           </a>
         </div>
 
         <a href="#contact">
-          <button className="bg-amber-200 rounded-lg p-5 w-full shadow-xl cursor-pointer  hover:shadow-2xl mt-1">
-            <h2 className="font-medium text-amber-500 text-xl">
+          <button className="bg-amber-200 rounded-lg p-3 w-full shadow-xl cursor-pointer  hover:shadow-2xl mt-1">
+            <h2 className="font-medium text-black text-xl">
               PUEDES SER CASA DE ACOGIDA
             </h2>
             <p className="text-justify font-light text-lg">

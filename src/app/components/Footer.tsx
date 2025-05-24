@@ -3,6 +3,7 @@ import { FaTiktok } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa6';
 import { FaFacebook } from 'react-icons/fa';
 import { FaWhatsapp } from 'react-icons/fa';
+import { MdOutlineMailOutline } from 'react-icons/md';
 
 export const Footer = () => {
   const socialLinks = [
@@ -31,11 +32,16 @@ export const Footer = () => {
       url: 'https://wa.me/34657236105',
       icon: <FaWhatsapp />,
     },
+    {
+      name: 'Email',
+      url: 'mailto:avbaanimales@gmail.com',
+      icon: <MdOutlineMailOutline />,
+    },
   ];
 
   return (
     <div className="w-screen z-10" id="contact">
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 bg-gray-800 text-white p-2">
+      <div className="grid grid-cols-2 md:grid-cols-6 gap-4 bg-gray-800 text-white p-2">
         {socialLinks.map((link) => (
           <div
             key={link.name}
