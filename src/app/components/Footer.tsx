@@ -28,7 +28,7 @@ export const Footer = ({
       className="relative w-full bg-gray-900 text-white overflow-hidden z-10"
     >
       {/* Sección principal del footer con contenido */}
-      <div className="container mx-auto px-4 pb-8 md:py-12">
+      <div className="container mx-auto px-4 pb-8 md:pb-12">
         {/* Contenedor de Redes Sociales */}
         <div className="mb-8 border-b border-gray-700 pb-8">
           <h3 className="text-xl md:text-2xl font-bold text-center text-amber-300 mb-6 animate-fade-in-down">
