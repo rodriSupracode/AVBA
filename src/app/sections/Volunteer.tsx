@@ -23,7 +23,7 @@ export const Volunteer = ({
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(${image})`,
         }}
-        className="bg-cover bg-center bg-no-repeat w-full min-h-[1000px] md:min-h-[700px] rounded-3xl shadow-2xl relative group transform transition-transform duration-500 hover:scale-[1.02] md:ease-in-out"
+        className="bg-cover bg-center bg-no-repeat w-full min-h-[1100px] md:min-h-[700px] rounded-3xl shadow-2xl relative group transform transition-transform duration-500 hover:scale-[1.02] md:ease-in-out"
       >
         <a
           href="#contact"

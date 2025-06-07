@@ -21,11 +21,8 @@ export const AboutUs = ({
       />
 
       {/* Main Content Container */}
-      <div className="relative z-10 flex flex-col md:flex-row items-center justify-center w-full px-4 md:px-8 lg:px-16 pt-16 pb-12 md:py-20">
-        {/* Empty div to push the text panel to the right on desktop, or just for spacing */}
-        <div className="hidden md:block md:w-1/2 lg:w-3/5"></div>{' '}
-        {/* This space allows the image to be more prominent on the left */}
-        {/* Text Panel */}
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-center w-full px-4 md:px-8 lg:px-16 pt-20 pb-10">
+        <div className="hidden md:block md:w-1/2 lg:w-3/5"></div>
         <div className="w-full md:w-1/2 lg:w-2/5 backdrop-filter backdrop-blur-md bg-white bg-opacity-80 rounded-xl shadow-2xl p-8 md:p-10 flex flex-col items-start justify-center animate-slide-in-right">
           <h2 className="text-3xl md:text-4xl font-extrabold text-amber-300 mb-4 drop-shadow-sm">
             {title}
