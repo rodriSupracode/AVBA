@@ -28,7 +28,7 @@ export const Footer = ({
       className="relative w-full bg-gray-900 text-white overflow-hidden z-10"
     >
       {/* Sección principal del footer con contenido */}
-      <div className="container mx-auto px-4 py-8 md:py-12">
+      <div className="container mx-auto px-4 pb-8 md:py-12">
         {/* Contenedor de Redes Sociales */}
         <div className="mb-8 border-b border-gray-700 pb-8">
           <h3 className="text-xl md:text-2xl font-bold text-center text-amber-300 mb-6 animate-fade-in-down">
@@ -39,7 +39,7 @@ export const Footer = ({
               socialNetwork.map((social) => (
                 <div
                   key={social.label}
-                  className="flex items-center justify-center p-2 rounded-lg bg-gray-800 hover:bg-amber-600 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg"
+                  className="flex items-center cursor-pointer justify-center p-2 rounded-lg bg-gray-800 hover:bg-amber-600 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg"
                 >
                   <a
                     href={social.link}
