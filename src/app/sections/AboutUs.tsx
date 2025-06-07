@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 export const AboutUs = ({
   title,
   description,
@@ -11,26 +9,36 @@ export const AboutUs = ({
 }) => {
   return (
     <section
-      className="flex flex-row items-center justify-end w-full h-screen bg-white overflow-hidden"
       id="sobre-nosotros"
+      className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gray-50" // Use min-h-screen for full height, flex-col for stacking in small screens
     >
-      <Image
-        src={backgroundImage}
-        alt="refugio"
-        height={1000}
-        width={1000}
-        className="!h-full w-10/12 rounded shadow-2xl about-us-image md:block hidden"
+      {/* Background Image Div */}
+      <div
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url(${backgroundImage})`, // Added a linear gradient for better text readability
+        }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 animate-fade-in" // Added z-0 and animate-fade-in
       />
-      <div className="bg-[url('/avba-refugee.jpeg')] bg-cover bg-no-repeat w-full h-full absolute top-0 left-0 md:hidden" />
 
-      <div className="absolute md:w-96 md:left-2 px-2 md:px-0 w-full md:top-auto">
-        <div className="md:bg-white backdrop-blur-xs backdrop-brightness-50 md:backdrop-brightness-100 text-justify md:backdrop-blur-none rounded-lg shadow-2xl p-8 flex flex-col items-start justify-center">
-          <h1 className="text-3xl font-bold text-amber-200  md:text-amber-300 mb-4">
-            {title || ''}
-          </h1>
-          <p className="md:text-gray-700 text-amber-100 text-lg mb-4">
-            {description || ''}
+      {/* Main Content Container */}
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-center w-full px-4 md:px-8 lg:px-16 pt-16 pb-12 md:py-20">
+        {/* Empty div to push the text panel to the right on desktop, or just for spacing */}
+        <div className="hidden md:block md:w-1/2 lg:w-3/5"></div>{' '}
+        {/* This space allows the image to be more prominent on the left */}
+        {/* Text Panel */}
+        <div className="w-full md:w-1/2 lg:w-2/5 backdrop-filter backdrop-blur-md bg-white bg-opacity-80 rounded-xl shadow-2xl p-8 md:p-10 flex flex-col items-start justify-center animate-slide-in-right">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-amber-300 mb-4 drop-shadow-sm">
+            {title}
+          </h2>
+          <p className="text-gray-800 text-lg md:text-xl leading-relaxed mb-6">
+            {description}
           </p>
+          {/* Optional CTA Button */}
+          <a href="#contact" className="self-end md:self-start mt-4">
+            <button className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-amber-300 focus:ring-opacity-75">
+              Conoce más
+            </button>
+          </a>
         </div>
       </div>
     </section>

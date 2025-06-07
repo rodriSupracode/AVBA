@@ -25,7 +25,7 @@ export const Donations = ({
   return (
     <section
       id="dona"
-      className="relative flex w-full flex-col items-center justify-center bg-[url('/donations.png')] bg-cover bg-center p-1 md:p-4" // Ajustes de fondo y padding
+      className="relative flex w-full flex-col items-center justify-center bg-[url('/donations.png')] bg-center bg-repeat p-4 md:p-10" // Ajustes de fondo y padding
     >
       <div className="w-full rounded-2xl bg-white/90  shadow-2xl backdrop-blur-sm p-6 md:p-10">
         <h1 className="mb-6 text-center text-3xl font-extrabold text-gray-800 md:text-4xl">

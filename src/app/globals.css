@@ -36,5 +36,5 @@ html {
 }
 
 .highlight-title {
-  @apply text-amber-500 text-2xl font-bold;
+  @apply text-amber-500 text-5xl font-bold;
 }
