@@ -58,9 +58,12 @@ export const Help = ({
         <h2 className="text-center font-extrabold text-3xl md:text-4xl text-amber-300 mb-4 animate-fade-in-down">
           {socialNetworksTitle}
         </h2>
-        <p className="text-center font-light text-lg md:text-xl mt-4 max-w-2xl mx-auto text-gray-300 animate-fade-in-up">
-          {socialNetworksDescription}
-        </p>
+        <p
+          className="text-center font-light text-lg md:text-xl mt-4 max-w-2xl mx-auto text-gray-300 animate-fade-in-up"
+          dangerouslySetInnerHTML={{
+            __html: socialNetworksDescription,
+          }}
+        />
         <hr className="border-amber-400 mt-8 mx-auto w-2/3 md:w-1/2 lg:w-1/3 animate-grow-width" />
       </div>
     </section>
