@@ -38,8 +38,3 @@ html {
 .highlight-title {
   @apply text-amber-500 text-2xl font-bold;
 }
-
-.list-volunter {
-  list-style-type: '🐱 ';
-  list-style-position: inside;
-}
