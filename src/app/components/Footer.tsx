@@ -1,60 +1,43 @@
-import { FaXTwitter } from 'react-icons/fa6';
-import { FaTiktok } from 'react-icons/fa';
-import { FaInstagram } from 'react-icons/fa6';
-import { FaFacebook } from 'react-icons/fa';
-import { FaWhatsapp } from 'react-icons/fa';
-import { MdOutlineMailOutline } from 'react-icons/md';
+import { JSX } from 'react';
+import {
+  FaFacebook,
+  FaWhatsapp,
+  FaXTwitter,
+  FaTiktok,
+  FaInstagram,
+  FaEnvelope,
+} from 'react-icons/fa6';
 
-export const Footer = () => {
-  const socialLinks = [
-    {
-      name: 'Facebook',
-      url: 'https://www.facebook.com/share/1YeHe3MQwj/?mibextid=wwXIfr',
-      icon: <FaFacebook />,
-    },
-    {
-      name: 'Instagram',
-      url: 'https://www.instagram.com/avba.lachar?igsh=d2R4eGRjYXh1eTlz&utm_source=qr',
-      icon: <FaInstagram />,
-    },
-    {
-      name: 'Twitter/X',
-      url: 'https://x.com/AVBAanimales?t=RK3UA8cA4UiUU2-jz0KXZg&s=08',
-      icon: <FaXTwitter />,
-    },
-    {
-      name: 'Tiktok',
-      url: 'https://www.tiktok.com/@refugioavba?_t=ZN-8wLhMe6qmZS&_r=1',
-      icon: <FaTiktok />,
-    },
-    {
-      name: 'Whatsapp',
-      url: 'https://wa.me/34657236105',
-      icon: <FaWhatsapp />,
-    },
-    {
-      name: 'Email',
-      url: 'mailto:avbaanimales@gmail.com',
-      icon: <MdOutlineMailOutline />,
-    },
-  ];
+export const Footer = ({
+  socialNetwork,
+}: {
+  socialNetwork?: { label: string; icon: string; link: string }[];
+}) => {
+  const iconMap: Record<string, JSX.Element> = {
+    FaXTwitter: <FaXTwitter />,
+    FaTiktok: <FaTiktok />,
+    FaInstagram: <FaInstagram />,
+    FaFacebook: <FaFacebook />,
+    FaWhatsapp: <FaWhatsapp />,
+    FaEnvelope: <FaEnvelope />,
+  };
 
   return (
     <div className="w-screen z-10" id="contact">
       <div className="grid grid-cols-2 md:grid-cols-6 gap-4 bg-gray-800 text-white p-2">
-        {socialLinks.map((link) => (
+        {socialNetwork?.map((social) => (
           <div
-            key={link.name}
+            key={social.label}
             className="flex items-center justify-center p-1 hover:bg-gray-700 rounded-md transition duration-300"
           >
             <a
-              href={link.url}
+              href={social.link}
               target="_blank"
               rel="noopener noreferrer"
               className="text-white text-lg font-base flex items-center gap-2"
             >
-              {link.icon}
-              {link.name}
+              {iconMap[social.icon]}
+              {social.label}
             </a>
           </div>
         ))}

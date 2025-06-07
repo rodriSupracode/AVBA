@@ -1,19 +1,20 @@
 'use client';
-import { strapi } from '@strapi/client';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import useOnclickOutside from 'react-cool-onclickoutside';
 import { IoMenu } from 'react-icons/io5';
 
-export const Header = () => {
-  const client = strapi({
-    baseURL: process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337',
-    auth: process.env.NEXT_PUBLIC_STRAPI_API_TOKEN || '',
-  });
+export const Header = ({
+  logo,
+  longTitle,
+  shortTitle,
+}: {
+  logo: string;
+  longTitle: string;
+  shortTitle: string;
+}) => {
   const [isNavbarOpen, setNavbarOpen] = useState(false);
-  const [logo, setLogo] = useState<string | null>(null);
-  const [longTitle, setLongTitle] = useState<string | null>(null);
-  const [shortTitle, setShortTitle] = useState<string | null>(null);
+
   const toggleNavbar = () => {
     setNavbarOpen(!isNavbarOpen);
   };
@@ -32,21 +33,6 @@ export const Header = () => {
     // { label: 'Nuestros felinos', href: '#nuestros-felinos' },
     { label: 'Contacto', href: '#contact' },
   ];
-
-  useEffect(() => {
-    client
-      .fetch('pagina-principal?populate=*')
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data.data);
-        setLogo(data.data.logo?.url || null);
-        setLongTitle(data.data.long_title);
-        setShortTitle(data.data.short_title);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
 
   return (
     <div className="absolute top-0 left-0 w-screen z-10 px-2 pt-2">
@@ -70,7 +56,7 @@ export const Header = () => {
             </h1>
           </div>
           <button
-            className="roundend text-black text-2xl bg-amber-100 p-2 rounded-md shadow-md hover:bg-amber-200 focus:outline-none"
+            className="roundend text-black text-2xl bg-amber-100 p-2 cursor-pointer rounded-md shadow-md hover:bg-amber-200 focus:outline-none"
             onClick={toggleNavbar}
           >
             <IoMenu />
